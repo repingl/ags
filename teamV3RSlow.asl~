@@ -1,7 +1,6 @@
 rozhled(3).
 start.
 
-// Go to starting position and go right.
 +step(X): start <- 
 	?grid_size(A,B);?rozhled(R);-start;+go(R,R);+search;+right(A-2*R-1);do(skip).
 
