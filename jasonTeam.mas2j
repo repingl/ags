@@ -16,5 +16,5 @@ MAS miners {
 		aFast teamV3RFast;
 		bSlow teamySlow;
 		bMiddle teamyMiddle;
-		bFast teamyFast;
+		bFast teamyFast; 
 }
