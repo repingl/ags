@@ -17,4 +17,5 @@ MAS miners {
 		bSlow teamySlow;
 		bMiddle teamyMiddle;
 		bFast teamyFast; 
+		test testAgent;
 }

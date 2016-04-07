@@ -99,4 +99,8 @@ public class WorldGrid{
 		}
 		return new Border();
 	}
+	
+	public WorldElement getElement(int x, int y){
+		return grid[x][y];
+	}
 }
