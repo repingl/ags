@@ -7,13 +7,17 @@ import jason.asSemantics.TransitionSystem;
 import jason.asSemantics.Unifier;
 import jason.asSyntax.Term;
 import world.World;
-import worldObjects.Deposit;
-import worldObjects.Glasses;
-import worldObjects.Gold;
 import worldObjects.Wall;
-import worldObjects.Wood;
 
 
+/** Nastavi element na danu poziciu.
+ * Syntax:
+ * ia.setElement(type,r,c).
+ * type je typ objektu, pre stenu je to wall (term, povinny)
+ * r je riadok objektu v mriezke (cislo, povinne)
+ * c je stlpec objektu v mriezke (cislo, povinne)
+ * 
+ * @author jakub */
 @SuppressWarnings("serial")
 public class setElement extends DefaultInternalAction{
 	
@@ -21,19 +25,7 @@ public class setElement extends DefaultInternalAction{
 	public Object execute(TransitionSystem ts, Unifier un, Term[] args) throws Exception{
 		try{
 			String type = args[0].toString();
-			if(type.equals("wood")){
-				World	.getInstance()
-						.setElement(new Wood(new Integer(args[1].toString()), new Integer(args[2].toString())));
-			}else if(type.equals("gold")){
-				World	.getInstance()
-						.setElement(new Gold(new Integer(args[1].toString()), new Integer(args[2].toString())));
-			}else if(type.equals("glasses")){
-				World	.getInstance()
-						.setElement(new Glasses(new Integer(args[1].toString()), new Integer(args[2].toString())));
-			}else if(type.equals("depot")){
-				World	.getInstance()
-						.setElement(new Deposit(new Integer(args[1].toString()), new Integer(args[2].toString())));
-			}else if(type.equals("wall")){
+			if(type.equals("wall")){
 				World	.getInstance()
 						.setElement(new Wall(new Integer(args[1].toString()), new Integer(args[2].toString())));
 			}else{

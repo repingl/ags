@@ -3,12 +3,25 @@ package astar.node;
 import worldElement.WorldElement;
 
 
+/** Reprezentacia uzlu pre algoritmus A*.
+ * Obsahuje <code>WorldElement</code>, <code>AstarNode</code>, z ktoreho sme prisli, vzdialenost od zaciatku a celkovu
+ * cenu cesty.
+ * 
+ * @author jakub */
 public class AstarNode implements Comparable<AstarNode>{
 	private WorldElement element;
 	private AstarNode prev;
 	private int distance;
 	private int cost;
 	
+	/** @param element
+	 *            objekt na mape
+	 * @param prev
+	 *            uzol, z ktoreho sme prisli
+	 * @param distance
+	 *            vzdialenost od zaciatku
+	 * @param cost
+	 *            cena cesty (heuristika) */
 	public AstarNode(WorldElement element, AstarNode prev, int distance, int cost){
 		super();
 		this.element = element;

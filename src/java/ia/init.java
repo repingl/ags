@@ -9,6 +9,13 @@ import jason.asSyntax.Term;
 import world.World;
 
 
+/** Inicializuje mriezku.
+ * Syntax:
+ * ia.init(r,c).
+ * r je pocet riadkov mriezky (cislo, povinne)
+ * c je pocet stlpcov mriezky (cislo, povinne)
+ * 
+ * @author jakub */
 @SuppressWarnings("serial")
 public class init extends DefaultInternalAction{
 	

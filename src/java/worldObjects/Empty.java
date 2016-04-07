@@ -3,10 +3,14 @@ package worldObjects;
 import worldElement.WorldElement;
 
 
+/** Prazdne policko na mriezke, agent sa nan moze dostat.
+ * Charakterizovane svojou pozicou, riadok a stlpec mriezky.
+ * 
+ * @author jakub */
 public class Empty extends WorldElement{
 	
-	public Empty(int x, int y){
-		super(x, y);
+	public Empty(int row, int column){
+		super(row, column);
 	}
 	
 	@Override
@@ -25,8 +29,9 @@ public class Empty extends WorldElement{
 	
 	@Override
 	public int hashCode(){
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		int result = super.hashCode();
+		result = 31 * result + "Empty".hashCode();
+		return result;
 	}
 	
 	@Override
@@ -36,6 +41,6 @@ public class Empty extends WorldElement{
 	
 	@Override
 	public String symbol(){
-		return "E";
+		return "O";
 	}
 }

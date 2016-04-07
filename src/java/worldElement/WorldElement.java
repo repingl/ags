@@ -3,19 +3,27 @@ package worldElement;
 import java.awt.Point;
 
 
+/** Zakladny element mapy.
+ * Je charakterizovany svojou poziciou, riadok a stlpec v mriezke.
+ * 
+ * @author jakub */
 public abstract class WorldElement{
 	private Point position;
 	
+	/** @return True ak sa agent moze na tento element pohnut, inak False. */
 	public abstract boolean canMove();
 	
+	/** @return Vrati znak charakterizujuci objekt. */
 	public abstract String symbol();
 	
-	/** @param x
-	 *            is row
-	 * @param y
-	 *            is column */
-	public WorldElement(int x, int y){
-		position = new Point(x, y);
+	/** Zakladny konstruktor, parametre udavaju poziciu objektu.
+	 * 
+	 * @param row
+	 *            riadok
+	 * @param column
+	 *            stlpec */
+	public WorldElement(int row, int column){
+		position = new Point(row, column);
 	}
 	
 	public Point getPosition(){
@@ -26,15 +34,15 @@ public abstract class WorldElement{
 		position = p;
 	}
 	
-	public void setPosition(int x, int y){
-		position = new Point(x, y);
+	public void setPosition(int row, int column){
+		position = new Point(row, column);
 	}
 	
-	public int getX(){
+	public int getRow(){
 		return position.x;
 	}
 	
-	public int getY(){
+	public int getColumn(){
 		return position.y;
 	}
 	

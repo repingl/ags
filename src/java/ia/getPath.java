@@ -11,6 +11,17 @@ import world.World;
 import worldElement.WorldElement;
 
 
+/** Interna akcia, ktora najde cestu pre agenta.
+ * Syntax:
+ * ia.getPath(x,y,xGoal,yGoal,Path).
+ * x je startovacia suradnica x (cislo, povinne)
+ * y je startovacia suradnica y (cislo, povinne)
+ * xGoal je cielova suradnica x (cislo, povinne)
+ * yGoal je cielova suradnica y (cislo, povinne)
+ * Path je premenna, ktora bude unifikovana so zoznamom objektov po ceste. Ma tvar [x1,y1,x2,y2,...,xGoal,yGoal].
+ * (premenna, povinna)
+ * 
+ * @author jakub */
 @SuppressWarnings("serial")
 public class getPath extends DefaultInternalAction{
 	
@@ -27,8 +38,8 @@ public class getPath extends DefaultInternalAction{
 			ListTermImpl result = new ListTermImpl();
 			for(WorldElement e : path){
 				System.out.println(e);
-				result.add(new NumberTermImpl(e.getX()));
-				result.add(new NumberTermImpl(e.getY()));
+				result.add(new NumberTermImpl(e.getRow()));
+				result.add(new NumberTermImpl(e.getColumn()));
 			}
 			un.unifies(result, args[4]);
 		}catch(ArrayIndexOutOfBoundsException e){

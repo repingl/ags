@@ -3,10 +3,18 @@ package worldObjects;
 import worldElement.WorldElement;
 
 
+/** Prekazka na mriezke, agent sa na nu nemoze dostat.
+ * Charakterizovane svojou pozicou, riadok a stlpec mriezky.
+ * 
+ * @author jakub */
 public class Wall extends WorldElement{
 	
-	public Wall(int x, int y){
-		super(x, y);
+	public Wall(int row, int column){
+		super(row, column);
+	}
+	
+	public Wall(){
+		super( -1, -1);
 	}
 	
 	@Override
@@ -25,8 +33,9 @@ public class Wall extends WorldElement{
 	
 	@Override
 	public int hashCode(){
-		// TODO Auto-generated method stub
-		return super.hashCode();
+		int result = super.hashCode();
+		result = 31 * result + "Wall".hashCode();
+		return result;
 	}
 	
 	@Override
@@ -36,6 +45,6 @@ public class Wall extends WorldElement{
 	
 	@Override
 	public String symbol(){
-		return "W";
+		return "X";
 	}
 }
