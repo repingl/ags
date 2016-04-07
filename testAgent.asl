@@ -11,4 +11,7 @@
 +!start : true <- 
 	?grid_size(R,C);
 	ia.init(R,C);
-	ia.getPath(1,1,5,5).
+	?depot(X,Y);
+	ia.setElement(depot,X,Y);
+	ia.setElement(wall,1,2);
+	ia.getPath(1,1,X,Y).

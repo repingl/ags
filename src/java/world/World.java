@@ -30,4 +30,7 @@ public class World{
 		return AstarAlg.findPath(grid.getElement(x, y), grid.getElement(xGoal, yGoal), grid);
 	}
 	
+	public void setElement(WorldElement e){
+		grid.setElement(e);
+	}
 }
